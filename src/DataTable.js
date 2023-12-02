@@ -1,8 +1,16 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { Grid, Switch } from '@mui/material';
+import { Card, Grid, Switch } from '@mui/material';
 import { DataTablepie, PieActiveArc } from './Piechart';
 import { useState } from 'react';
+
+var cardStyle = {
+  display: 'block',
+  width: '40vw',
+  transitionDuration: '0.3s',
+  height: '30vw'
+}
+
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -65,9 +73,10 @@ export default function DataTable() {
   return (
     <>
       <Grid container style={{ margin: "5rem" }} justifyContent={'center'}>
-        <Grid item xs={1}></Grid>
-        <Grid item xs={4} spacing={2}>
+        {/* <Grid item xs={1}></Grid>*/}
+        <Grid item xs={4} spacing={1}> 
 
+<Card style={cardStyle}>
           <DataGrid
             rows={rows}
             columns={columns}
@@ -80,13 +89,14 @@ export default function DataTable() {
             pageSizeOptions={[5, 10]}
 
           />
-
+</Card>
         </Grid>
 
         <Grid item xs={1}></Grid>
 
-
         <Grid item xs={4} spacing={2} height={2}>
+<Card style={cardStyle}>
+        
 
           {
 
@@ -95,22 +105,18 @@ export default function DataTable() {
 
           }
 
-
-        </Grid>
-
-
-        <Grid item xs={1}></Grid>
-
-      </Grid>
-      <Grid
+<Grid
       container
       style={{
               display: "flex",
-       justifyContent:"flex-end"
+       justifyContent:"flex-end",
+       alignItems:"center"
   
       }}>
-        <Grid xs={10}></Grid>
-        <Grid xs={2}>
+        <Grid xs={8}></Grid>
+
+          <Grid justifyContent={'center'} xs={2}>
+
         <Switch
         size={"15"}
           value={buttonvalue}
@@ -119,7 +125,18 @@ export default function DataTable() {
           }}>
         </Switch>
         </Grid>
+
       </Grid>
+
+
+     
+
+        </Card>
+        </Grid>
+        <Grid item xs={1}></Grid>
+
+      </Grid>
+  
     </>
   );
 }

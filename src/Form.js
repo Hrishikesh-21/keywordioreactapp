@@ -9,6 +9,13 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import { Button, Card, CardContent, Dialog, DialogTitle, Grid, MenuItem, Select } from '@mui/material';
 import { useNavigate } from 'react-router';
 
+var cardStyle = {
+    display: 'block',
+    width: '60vw',
+    transitionDuration: '0.3s',
+    height: '30vw',
+    margin: "2rem"
+}
 
 export function AlertDialog(props) {
     console.log(props)
@@ -65,52 +72,60 @@ export function Form1() {
 
     return (
 
-        <Card sx={{ minWidth: 100 }}>
-            <CardContent>
-                <Grid container justifyContent={'center'}>
 
 
-                    <Grid container justifyContent={'center'}>
-                        <Box sx={{ '& > :not(style)': { m: 1 } }}>
-                            <TextField id="standard-basic" label="Heading 1" variant="standard" />
-                            <TextField id="standard-basic" label="Heading 2" variant="standard" />
-                            <TextField id="standard-basic" label="Description" variant="standard" />
-                        </Box>
-                    </Grid>
-                    <Grid container justifyContent={'center'}>
-                        <Box sx={{ '& > :not(style)': { m: 1 } }}>
-                            <TextField id="standard-basic" label="Buisneess Name" variant="standard" />
-                            <TextField id="standard-basic" label="Button Label" variant="standard" />
-                            <TextField id="standard-basic" label="Website URL" variant="standard" />
-                        </Box>
-                    </Grid>
-
-                    <Button
-
-                        onClick={() => {
-                            navigate("/CreateAds")
-                        }}
-
-                    >Back</Button>
-                    <Button
-                        onClick={handleClickOpen}
-                    >Submit</Button>
+        <>
+            <Grid container xs={12}>
+                <Grid item xs={1}></Grid>
+                <Grid item xs={10}>
+                    <Card style={cardStyle}>
 
 
+                        <div style={{ margin: "1rem" }}>
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Heading 1" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Heading 2" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Description" variant="outlined" />
 
-                    <Dialog
-                        open={open}
-                        aria-labelledby="alert-dialog-title"
-                        aria-describedby="alert-dialog-description"
-                    >
-                        <DialogTitle id="alert-dialog-title">
-                            {"Submitted"}
-                        </DialogTitle>
-                    </Dialog>
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Buisneess Name" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Button Label" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Website URL" variant="outlined" />
+
+
+                        </div>
+
+                        <div style={{
+                            display: "flex",
+                            justifyContent: "center"
+                        }}>
+                            <Button
+
+                                onClick={() => {
+                                    navigate("/CreateAds")
+                                }}
+
+                            >Back</Button>
+                            <Button
+                                onClick={handleClickOpen}
+                            >Submit</Button>
+                        </div>
+                    </Card>
 
                 </Grid>
-            </CardContent>
-        </Card>
+
+            </Grid>
+
+
+            <Dialog
+                open={open}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Submitted"}
+                </DialogTitle>
+            </Dialog>
+
+        </>
     );
 }
 
@@ -127,71 +142,71 @@ export function Form2() {
     };
 
     return (
-
-        <Card sx={{ minWidth: 100 }}>
-            <CardContent>
-                <Grid container justifyContent={'center'}>
-
-
-                    <Grid container justifyContent={'center'}>
-                        <Box sx={{ '& > :not(style)': { m: 1 } }}>
-                            <TextField id="standard-basic" label="Heading 1" variant="standard" />
-                            <TextField id="standard-basic" label="Heading 2" variant="standard" />
-                            <TextField id="standard-basic" label="Lanscape Marketing" variant="standard" />
-                        </Box>
-                    </Grid>
-
-                    <Grid container justifyContent={'center'}>
-                        <Box sx={{ '& > :not(style)': { m: 1 } }}>
-                            <TextField id="standard-basic" label="Portrait Marketing" variant="standard" />
-                            <TextField id="standard-basic" label="Square Marketing" variant="standard" />
-                            <TextField id="standard-basic" label="Video URL" variant="standard" />
-                        </Box>
-                    </Grid>
+        <>
+            <Grid container xs={12}>
+                <Grid item xs={1}></Grid>
+                <Grid item xs={10}>
+                    <Card style={cardStyle}>
+                        <div style={{ margin: "1rem" }}>
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Heading 1" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Heading 2" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Lanscape Marketing" variant="outlined" />
 
 
-                    <Grid container justifyContent={'center'}>
-                        <Box sx={{ '& > :not(style)': { m: 1 } }}>
-                            <TextField id="standard-basic" label="Description" variant="standard" />
-                            <TextField id="standard-basic" label="Buisneess Name" variant="standard" />
-                            <TextField id="standard-basic" label="Website URL" variant="standard" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Portrait Marketing" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Square Marketing" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Video URL" variant="outlined" />
+
+
+
+
+
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Description" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Buisneess Name" variant="outlined" />
+                            <TextField style={{ margin: "1rem" }} id="outlined-basic" label="Website URL" variant="outlined" />
 
                             <Select
-
+                                style={{ margin: "1rem" }}
                                 value={"Button Label"}
                                 label="Button Label"
                             >
                                 <MenuItem value={"Button Label"}>Button Label</MenuItem>
 
                             </Select>
-                        </Box>
-                    </Grid>
-                    <Button
-                        onClick={() => {
-                            navigate("/CreateAds")
-                        }}
+                        </div>
+                        <div style={{
+                            display: "flex",
+                            justifyContent: "center"
+                        }}>
+                            <Button
+                                onClick={() => {
+                                    navigate("/CreateAds")
+                                }}
 
-                    >Back</Button>
-                    <Button
-                        onClick={handleClickOpen}
-                    >Submit</Button>
-
-
-
-                    <Dialog
-                        open={open}
-                        aria-labelledby="alert-dialog-title"
-                        aria-describedby="alert-dialog-description"
-                    >
-                        <DialogTitle id="alert-dialog-title">
-                            {"Submitted"}
-                        </DialogTitle>
-                    </Dialog>
-
-
+                            >Back</Button>
+                            <Button
+                                onClick={handleClickOpen}
+                            >Submit</Button>
+                        </div>
+                    </Card>
 
                 </Grid>
-            </CardContent>
-        </Card>
-    );
+
+            </Grid>
+
+
+            <Dialog
+                open={open}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Submitted"}
+                </DialogTitle>
+            </Dialog>
+
+        </>
+
+
+    )
 }

@@ -46,8 +46,10 @@ const columns = [
  function PieActiveArc() {
     const [button,setbutton]=useState(false)
   return (
+    <div style={{ minHeight: 400, minWidth: '100%' }}>
 
     <PieChart
+    
       series={[
         {
           data:data,
@@ -57,6 +59,7 @@ const columns = [
       ]}
       height={200}
     />
+    </div>
   );
 }
 

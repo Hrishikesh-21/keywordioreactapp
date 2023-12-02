@@ -21,10 +21,10 @@ export default function BasicCard() {
 
   const formcontrol = (e) => {
 
-    if(Checkbox1 === true){
+    if (Checkbox1 === true) {
       navigate("/Form1")
     }
-    if(Checkbox2 === true){
+    if (Checkbox2 === true) {
       navigate("/Form2")
     }
 
@@ -41,27 +41,27 @@ export default function BasicCard() {
             style={{ margin: "1rem" }}>
 
 
-<CardActionArea
-onClick={(e)=>{
-  console.log(e)
-}}
->
-            <CardContent
-
-            >
-              <Checkbox
-                value={Checkbox1}
-                onChange={(e) => {
-                  setchecbox1(e.target.checked)
+            <CardActionArea
+              onClick={(e) => {
+                setchecbox1(!Checkbox1)
                 }}
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="https://mui.com/static/images/cards/paella.jpg"
-                alt="Paella dish"
-              />
-            </CardContent>
+            >
+              <CardContent
+
+              >
+                <Checkbox
+                  checked={Checkbox1}
+                  onChange={(e) => {
+                    setchecbox1(e.target.checked)
+                  }}
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="https://mui.com/static/images/cards/paella.jpg"
+                  alt="Paella dish"
+                />
+              </CardContent>
             </CardActionArea>
             <CardActions>
               <Button size="small">Text Ad</Button>
@@ -70,16 +70,19 @@ onClick={(e)=>{
         </Grid>
         <Grid item xs={1}></Grid>
         <Grid item xs={3} spacing={2}>
-          <Card
+          <Card style={{ margin: "1rem" }}>
 
-            style={{ margin: "1rem" }}>
-            <CardContent
-
-
+          <CardActionArea
+              onClick={(e) => {
+                setchecbox2(!Checkbox2)
+                }}
             >
+
+
+            <CardContent>
               <Checkbox
 
-                value={Checkbox2}
+                checked={Checkbox2}
                 onChange={(e) => {
                   setchecbox2(e.target.checked)
                 }}
@@ -88,6 +91,8 @@ onClick={(e)=>{
 
               <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique unde fugit veniam eius, perspiciatis sunt? Corporis qui ducimus quibusdam, aliquam dolore excepturi quae. Distinctio enim at eligendi perferendis in cum quibusdam sed quae, accusantium et aperiam? Quod itaque exercitationem, at ab sequi qui modi delectus quia corrupti alias distinctio nostrum. Minima ex dolor modi inventore sapiente necessitatibus aliquam fuga et. </Typography>
             </CardContent>
+            </CardActionArea>
+
             <CardActions>
               <Button size="small">Media Ad</Button>
             </CardActions>
@@ -99,7 +104,7 @@ onClick={(e)=>{
       <Grid item xs={12} style={{ marginLeft: "70rem" }} justifyItems={'right'}>
         {/* <Form1/>
           <Form2/> */}
-        <Button onClick={()=>{
+        <Button onClick={() => {
           formcontrol()
         }}>Next</Button>
       </Grid>
